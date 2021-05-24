@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## 本项目使用 yarn，请先确保安装
 
-`npm install -g yran`
+`npm install -g yarn`
 
 ## Available Scripts
 
