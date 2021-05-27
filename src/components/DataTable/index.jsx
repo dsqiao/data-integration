@@ -6,7 +6,7 @@ const { Sider, Content } = Layout
 
 function DataTable () {
   useEffect(() => {
-    fetch('/data/sales.json')
+    fetch('https://dsqiao.github.io/data-integration/data/sales.json')
       .then(res => res.json())
       .then(data => {
         const bar = new Column('container', {
@@ -54,7 +54,7 @@ function DataTable () {
       })
   }, [])
   useEffect(() => {
-    fetch('/data/buy_time.json')
+    fetch('https://dsqiao.github.io/data-integration/data/buy_time.json')
       .then(res => res.json())
       .then(data => {
         const bar = new Column('buy-time-container', {
