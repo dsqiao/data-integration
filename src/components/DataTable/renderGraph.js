@@ -1,5 +1,7 @@
 import { Column } from '@antv/g2plot'
 
+const THEME_COLOR = '#61DDAA'
+
 const renderHourGraph = function () {
   fetch('https://dsqiao.github.io/data-integration/data/buy_time.json')
     .then(res => res.json())
@@ -23,7 +25,7 @@ const renderHourGraph = function () {
         },
         maxColumnWidth: 8,
         columnStyle: {
-          fill: '#722ED1',
+          fill: THEME_COLOR,
         },
         xAxis: {
           label: {
@@ -64,7 +66,7 @@ const renderSalesGraoh = function () {
         seriesField: 'item_id',
         minColumnWidth: 1,
         columnStyle: {
-          fill: '#722ED1'
+          fill: THEME_COLOR
         },
         legend: false,
         label: {

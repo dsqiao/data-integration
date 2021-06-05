@@ -1,0 +1,19 @@
+@import url(../layout.css);
+
+.ant-layout-sider {
+  width: var(--sider-width);
+  position: fixed;
+  top: var(--header-height);
+  bottom: 0;
+}
+
+.ant-layout-content {
+  margin-left: var(--sider-width);
+  padding: 30px;
+}
+
+h3 {
+  padding-bottom: 8px;
+  font-size: 25px;
+  border-bottom: solid 1px #61DDAA;
+}

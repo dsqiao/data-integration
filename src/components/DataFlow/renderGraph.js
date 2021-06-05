@@ -1,7 +1,35 @@
 import { Column } from '@antv/g2plot'
 
+const THEME_COLOR = '#61DDAA'
+
+const renderRecallRateGraph = function () {
+  fetch('data/recall_rate.json')
+    .then(res => res.json())
+    .then(data => {
+      const bar = new Column('recall-rate-container', {
+        data,
+        xField: 'item_id',
+        yField: 'recall_rate',
+        xAxis: {
+          label: {
+            autoRotate: false,
+          },
+        },
+        columnStyle: {
+          fill: THEME_COLOR,
+        },
+        slider: {
+          start: 0.0,
+          end: 0.15,
+        },
+      })
+      bar.render()
+    })
+}
+
 const renderHourGraph = function () {
-  fetch('https://dsqiao.github.io/data-integration/data/brower_time.json')
+  // fetch('https://dsqiao.github.io/data-integration/data/brower_time.json')
+  fetch('/data/brower_time.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('browser-time-container', {
@@ -21,7 +49,7 @@ const renderHourGraph = function () {
         },
         maxColumnWidth: 8,
         columnStyle: {
-          fill: '#722ED1',
+          fill: THEME_COLOR,
         },
         xAxis: {
           label: {
@@ -51,7 +79,8 @@ const renderHourGraph = function () {
 }
 
 const renderBuyHourGraph = function () {
-  fetch('https://dsqiao.github.io/data-integration/data/buy_time_stream.json')
+  // fetch('https://dsqiao.github.io/data-integration/data/buy_time_stream.json')
+  fetch('/data/buy_time_stream.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('buy-time-container', {
@@ -71,7 +100,7 @@ const renderBuyHourGraph = function () {
         },
         maxColumnWidth: 8,
         columnStyle: {
-          fill: '#722ED1',
+          fill: THEME_COLOR,
         },
         xAxis: {
           label: {
@@ -101,7 +130,8 @@ const renderBuyHourGraph = function () {
 }
 
 const renderPremiseGraph = function () {
-  fetch('https://dsqiao.github.io/data-integration/data/premise.json')
+  // fetch('https://dsqiao.github.io/data-integration/data/premise.json')
+  fetch('/data/premise.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('premise-container', {
@@ -110,7 +140,7 @@ const renderPremiseGraph = function () {
         yField: 'ratio',
         maxColumnWidth: 8,
         columnStyle: {
-          fill: '#722ED1',
+          fill: THEME_COLOR,
         },
         xAxis: {
           label: {
@@ -140,6 +170,7 @@ const renderPremiseGraph = function () {
 }
 
 export default function renderGraph () {
+  renderRecallRateGraph()
   renderHourGraph()
   renderBuyHourGraph()
   renderPremiseGraph()
