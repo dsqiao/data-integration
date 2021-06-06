@@ -61,12 +61,12 @@ function DataFlow () {
         <h3 id="link1">实时模型精度</h3>
         <div id="precision-container"></div>
         <h3 id="link2">静态数据分析</h3>
-        <div id="recall-rate-container" style={{ width: '80%', marginLeft: '10%', marginTop: '160px' }} ></div>
-        <div id="browser-time-container" style={{ width: '80%', marginLeft: '10%', marginTop: '160px' }} />
+        <div id="recall-rate-container" className='graph-container'></div>
+        <div id="browser-time-container" className='graph-container' />
         <div style={{ marginTop: '30px' }}>我们分析了流数据表中所有 getDetail 请求的时间，做出每小时 getDetail 请求的数量如上图</div>
-        <div id="buy-time-container" style={{ width: '80%', marginLeft: '10%', marginTop: '160px' }} />
+        <div id="buy-time-container" className='graph-container'/>
         <div style={{ marginTop: '30px' }}>然后，我们分析了流数据表中所有 buy 请求的时间</div>
-        <div id="premise-container" style={{ width: '80%', marginLeft: '10%', marginTop: '160px' }} />
+        <div id="premise-container" className='graph-container'/>
         <div style={{ marginTop: '30px' }}>随后，我们根据购买量与浏览量，计算出各个时间段用户的购买欲望如图</div>
       </Content>
     </Layout>

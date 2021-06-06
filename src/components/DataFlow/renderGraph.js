@@ -3,7 +3,7 @@ import { Column } from '@antv/g2plot'
 const THEME_COLOR = '#61DDAA'
 
 const renderRecallRateGraph = function () {
-  fetch('data/recall_rate.json')
+  fetch('http://119.3.153.72/recall_rate.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('recall-rate-container', {
@@ -28,8 +28,7 @@ const renderRecallRateGraph = function () {
 }
 
 const renderHourGraph = function () {
-  // fetch('https://dsqiao.github.io/data-integration/data/brower_time.json')
-  fetch('/data/brower_time.json')
+  fetch('http://119.3.153.72//brower_time.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('browser-time-container', {
@@ -79,8 +78,7 @@ const renderHourGraph = function () {
 }
 
 const renderBuyHourGraph = function () {
-  // fetch('https://dsqiao.github.io/data-integration/data/buy_time_stream.json')
-  fetch('/data/buy_time_stream.json')
+  fetch('http://119.3.153.72/buy_time_stream.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('buy-time-container', {
@@ -130,8 +128,7 @@ const renderBuyHourGraph = function () {
 }
 
 const renderPremiseGraph = function () {
-  // fetch('https://dsqiao.github.io/data-integration/data/premise.json')
-  fetch('/data/premise.json')
+  fetch('http://119.3.153.72/premise.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('premise-container', {

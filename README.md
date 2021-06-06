@@ -1,7 +1,8 @@
-# 2018级《数据集成》大作业成果展示
+# 2018级《数据集成》第20组大作业成果展示
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## 本项目使用 yarn，请先确保安装
+## 本项目使用 yarn
+安装 yarn：
 
 `npm install -g yarn`
 

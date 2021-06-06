@@ -3,7 +3,7 @@ import { Column } from '@antv/g2plot'
 const THEME_COLOR = '#61DDAA'
 
 const renderHourGraph = function () {
-  fetch('https://dsqiao.github.io/data-integration/data/buy_time.json')
+  fetch('http://119.3.153.72/buy_time.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('buy-time-container', {
@@ -54,8 +54,63 @@ const renderHourGraph = function () {
     })
 }
 
+const renderBuyCountGraph = function () {
+  fetch('http://119.3.153.72/user_buy_amount.json')
+    .then(res => res.json())
+    .then(data => {
+      const bar = new Column('buy-amount-container', {
+        data,
+        xField: 'u_id',
+        yField: 'b_a',
+        label: {
+          position: 'top',
+          style: {
+            fill: '#000',
+            opacity: 0.6,
+          },
+          layout: [
+            // 柱形图数据标签位置自动调整
+            { type: 'interval-adjust-position' },
+            // 数据标签防遮挡
+            { type: 'interval-hide-overlap' },
+          ],
+        },
+        maxColumnWidth: 8,
+        columnStyle: {
+          fill: THEME_COLOR,
+        },
+        xAxis: {
+          label: {
+            autoHide: true,
+            autoRotate: false,
+          },
+          title: {
+            text: 'user_id'
+          }
+        },
+        yAxis: {
+          title: {
+            text: '订单量'
+          }
+        },
+        meta: {
+          time: {
+            alias: 'user_id',
+          },
+          value: {
+            alias: '订单量',
+          },
+        },
+        slider: {
+          start: 0.0,
+          end: 0.10,
+        },
+      })
+      bar.render()
+    })
+}
 const renderSalesGraoh = function () {
-  fetch('https://dsqiao.github.io/data-integration/data/sales.json')
+  fetch('http://119.3.153.72/sales.json')
     .then(res => res.json())
     .then(data => {
       const bar = new Column('container', {
@@ -106,4 +161,5 @@ const renderSalesGraoh = function () {
 export default function renderGraph () {
   renderHourGraph()
   renderSalesGraoh()
+  renderBuyCountGraph()
 }
