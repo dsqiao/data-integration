@@ -28,9 +28,7 @@ function DataFlow () {
     })
     liquidPlot.render()
     setInterval(() => {
-      fetch('http://119.3.153.72/output.txt', {
-        mode: 'cors',
-      })
+      fetch('http://119.3.153.72/output.txt')
         .then(res => res.json())
         .then(data => {
           console.log(data)
@@ -59,15 +57,17 @@ function DataFlow () {
       </Sider>
       <Content>
         <h3 id="link1">实时模型精度</h3>
+        <div className="paragraph">我们每隔一秒钟获取一次最新的模型精度，并展示如下：</div>
         <div id="precision-container"></div>
         <h3 id="link2">静态数据分析</h3>
+        <div className="paragraph">我们统计出了所有商品的订单数量与浏览数量，做差，得到召回率，从高低排序做图如下：</div>
         <div id="recall-rate-container" className='graph-container'></div>
+        <div className="paragraph">我们分析了流数据表中所有 getDetail 请求的时间，做出每小时 getDetail 请求的数量如上图</div>
         <div id="browser-time-container" className='graph-container' />
-        <div style={{ marginTop: '30px' }}>我们分析了流数据表中所有 getDetail 请求的时间，做出每小时 getDetail 请求的数量如上图</div>
-        <div id="buy-time-container" className='graph-container'/>
-        <div style={{ marginTop: '30px' }}>然后，我们分析了流数据表中所有 buy 请求的时间</div>
+        <div className="paragraph">然后，我们分析了流数据表中所有 buy 请求的时间</div>
+        <div id="buy-time-container" className='graph-container' />
+        <div className="paragraph">随后，我们根据购买量与浏览量，计算出各个时间段用户的购买欲望如图</div>
         <div id="premise-container" className='graph-container'/>
-        <div style={{ marginTop: '30px' }}>随后，我们根据购买量与浏览量，计算出各个时间段用户的购买欲望如图</div>
       </Content>
     </Layout>
   )

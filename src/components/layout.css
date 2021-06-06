@@ -9,17 +9,45 @@
 
 .ant-layout-content {
   margin-left: var(--sider-width);
-  padding: 30px;
+  padding: 40px 120px;
 }
 
 h3 {
+  margin-top: 40px;
   padding-bottom: 8px;
   font-size: 25px;
   border-bottom: solid 1px #61DDAA;
 }
 
 .graph-container {
-  width: 70%;
-  margin-left: 15%;
-  margin-top: 160px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.paragraph {
+  margin: 20px 0px;
+  font-size: 16px;
+}
+@media screen and (max-width: 1000px){
+  .ant-layout-sider { display: none; }
+  .ant-layout-content { 
+    margin-left: 0; 
+    padding: 40px 12vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .graph-container {
+    width: 100%;
+    margin: 0;
+  }
+  .ant-layout-content {
+    margin-left: 0;
+    padding: 40px 3vw;
+  }
+  .paragraph {
+    margin: 40px 0;
+  }
 }
